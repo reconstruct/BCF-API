@@ -14,6 +14,10 @@
   "paths": {
     "/projects/": {
       "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "3.1.1 GET Projects Service",
         "description": "",
         "responses": {
           "200": {
@@ -24,6 +28,10 @@
     },
     "/projects/{project_guid}": {
       "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "3.1.2 GET Project Service",
         "description": "",
         "parameters": [
           {
@@ -42,6 +50,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "3.1.3 PUT Project Service",
         "description": "",
         "parameters": [
           {
@@ -62,6 +74,10 @@
     },
     "/projects/{project_guid}/extensions": {
       "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "3.1.4 GET Project Extension Service",
         "description": "",
         "parameters": [
           {
@@ -82,6 +98,10 @@
     },
     "/projects/{project_guid}/comments/": {
       "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "3.4.1 GET Comments Service",
         "description": "",
         "parameters": [
           {
@@ -100,6 +120,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "3.4.2 POST Comment Service",
         "description": "",
         "parameters": [
           {
@@ -120,6 +144,10 @@
     },
     "/projects/{project_guid}/comments/{comment_guid}": {
       "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "3.4.3 GET Comment Service",
         "description": "",
         "parameters": [
           {
@@ -146,6 +174,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "3.4.4 PUT Comment Service",
         "description": "",
         "parameters": [
           {
@@ -172,6 +204,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "3.4.5 DELETE Comment Service",
         "description": "",
         "parameters": [
           {
@@ -200,6 +236,10 @@
     },
     "/projects/{project_guid}/documents/": {
       "get": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "3.8.1 GET Documents Service",
         "description": "",
         "parameters": [
           {
@@ -218,6 +258,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "3.8.2 POST Document Service",
         "description": "",
         "parameters": [
           {
@@ -238,6 +282,10 @@
     },
     "/projects/{project_guid}/documents/{document_guid}": {
       "get": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "3.8.3 GET Document Service",
         "description": "",
         "parameters": [
           {
@@ -266,6 +314,10 @@
     },
     "/projects/{project_guid}/files_information/": {
       "get": {
+        "tags": [
+          "File Information"
+        ],
+        "summary": "3.3.1 GET Project Files Information Service",
         "description": "",
         "parameters": [
           {
@@ -286,6 +338,10 @@
     },
     "/projects/{project_guid}/topics/": {
       "get": {
+        "tags": [
+          "Topic"
+        ],
+        "summary": "3.2.1 GET Topics Service",
         "description": "",
         "parameters": [
           {
@@ -298,12 +354,16 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "post": {
+        "tags": [
+          "Topic"
+        ],
+        "summary": "3.2.2 POST Topic Service",
         "description": "",
         "parameters": [
           {
@@ -324,6 +384,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}": {
       "get": {
+        "tags": [
+          "Topic"
+        ],
+        "summary": "3.2.3 GET Topic Service",
         "description": "",
         "parameters": [
           {
@@ -344,12 +408,16 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "put": {
+        "tags": [
+          "Topic"
+        ],
+        "summary": "3.2.4 PUT Topic Service",
         "description": "",
         "parameters": [
           {
@@ -370,12 +438,16 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "delete": {
+        "tags": [
+          "Topic"
+        ],
+        "summary": "3.2.5 DELETE Topic Service",
         "description": "",
         "parameters": [
           {
@@ -404,6 +476,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/snippet": {
       "get": {
+        "tags": [
+          "Topic"
+        ],
+        "summary": "3.2.6 GET Topic BIM Snippet Service",
         "description": "",
         "parameters": [
           {
@@ -424,12 +500,16 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "put": {
+        "tags": [
+          "Topic"
+        ],
+        "summary": "3.2.7 PUT Topic BIM Snippet Service",
         "description": "",
         "parameters": [
           {
@@ -450,14 +530,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/projects/{project_guid}/topics/comments/events/": {
       "get": {
+        "tags": [
+          "Comment Events"
+        ],
+        "summary": "3.10.1 GET Comment Events Service",
         "description": "",
         "parameters": [
           {
@@ -478,6 +562,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/comments/{comment_guid}/events/": {
       "get": {
+        "tags": [
+          "Comment Events"
+        ],
+        "summary": "3.10.2 GET Comment Events Service",
         "description": "",
         "parameters": [
           {
@@ -514,6 +602,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/document_references/{document_guid}": {
       "get": {
+        "tags": [
+          "Document Reference"
+        ],
+        "summary": "3.7.1 GET Document References Service",
         "description": "",
         "parameters": [
           {
@@ -548,6 +640,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Document Reference"
+        ],
+        "summary": "3.7.3 PUT Document Reference Service",
         "description": "",
         "parameters": [
           {
@@ -584,6 +680,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/document_references/": {
       "post": {
+        "tags": [
+          "Document Reference"
+        ],
+        "summary": "3.7.2 POST Document Reference Service",
         "description": "",
         "parameters": [
           {
@@ -612,6 +712,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/files/": {
       "get": {
+        "tags": [
+          "File"
+        ],
+        "summary": "3.3.2 GET Files (Header) Service",
         "description": "",
         "parameters": [
           {
@@ -638,6 +742,10 @@
         }
       },
       "put": {
+        "tags": [
+          "File"
+        ],
+        "summary": "3.3.3 PUT Files (Header) Service",
         "description": "",
         "parameters": [
           {
@@ -666,6 +774,10 @@
     },
     "/projects/{project_guid}/topics/events/": {
       "get": {
+        "tags": [
+          "Topic Events"
+        ],
+        "summary": "3.9.1 GET Topics Events Service",
         "description": "",
         "parameters": [
           {
@@ -678,14 +790,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/projects/{project_guid}/topics/{topic_guid}/events/": {
       "get": {
+        "tags": [
+          "Topic Events"
+        ],
+        "summary": "3.9.2 GET Topic Events Service",
         "description": "",
         "parameters": [
           {
@@ -714,6 +830,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/viewpoints/": {
       "get": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.1 GET Viewpoints Service",
         "description": "",
         "parameters": [
           {
@@ -734,12 +854,16 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "post": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.2 POST Viewpoint Service",
         "description": "",
         "parameters": [
           {
@@ -768,6 +892,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/viewpoints/{viewpoint_guid}": {
       "get": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.3 GET Viewpoint Service",
         "description": "",
         "parameters": [
           {
@@ -796,12 +924,16 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       },
       "delete": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.9 DELETE Viewpoint Service",
         "description": "",
         "parameters": [
           {
@@ -838,6 +970,10 @@
     },
     "/projects/{project_guid}/topics/{topic_guid}/viewpoints/{viewpoint_guid}/snapshot": {
       "get": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.4 GET Viewpoint Snapshot Service",
         "description": "",
         "parameters": [
           {
@@ -866,14 +1002,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/projects/{project_guid}/topics/{topic_guid}/viewpoints/{viewpoint_guid}/bitmap/{bitmap_guid}": {
       "get": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.5 GET Viewpoint Bitmap Service",
         "description": "",
         "parameters": [
           {
@@ -910,14 +1050,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/projects/{project_guid}/topics/{topic_guid}/viewpoints/{viewpoint_guid}/selection": {
       "get": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.6 GET Selected Components Service",
         "description": "",
         "parameters": [
           {
@@ -946,14 +1090,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/projects/{project_guid}/topics/{topic_guid}/viewpoints/{viewpoint_guid}/coloring": {
       "get": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.7 GET Colored Components Service",
         "description": "",
         "parameters": [
           {
@@ -982,14 +1130,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/projects/{project_guid}/topics/{topic_guid}/viewpoints/{viewpoint_guid}/visibility": {
       "get": {
+        "tags": [
+          "Viewpoint"
+        ],
+        "summary": "3.5.8 GET Visibility of Components Service",
         "description": "",
         "parameters": [
           {
@@ -1018,14 +1170,18 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
     },
     "/projects/{project_guid}/related_topics/": {
       "get": {
+        "tags": [
+          "Related Topics"
+        ],
+        "summary": "3.6.1 GET Related Topics Service",
         "description": "",
         "parameters": [
           {
@@ -1044,6 +1200,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Related Topics"
+        ],
+        "summary": "3.6.2 PUT Related Topics Service",
         "description": "",
         "parameters": [
           {
@@ -1059,6 +1219,22 @@
           "200": {
             "description": "OK"
           }
+        }
+      }
+    },
+    "/status/": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "required": false
         }
       }
     }
