@@ -1,0 +1,18 @@
+# This is an extension of GitLeaks configuration to detect MongoDB URI's
+title = "Gitleaks MongoDB URI detection rule"
+
+# Make this configuration file an extension of the base GitLeaks configuration.
+[extend]
+useDefault = true
+
+[[rules]]
+description = "MONGODB URI"
+id = "mongodb-uri"
+regex = '''mongodb\+srv:\/\/(.*):(.*)@(.*)'''
+secretGroup = 1
+tags = ["secrets"]
+keywords = [
+  "mongo",
+  "mongodb",
+  "uri"
+]

@@ -1,0 +1,23 @@
+{
+  "name": "bcf-api",
+  "version": "1.0.0",
+  "description": "A compatible BCF API server from Reconstruct Inc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reconstruct/BCF-API.git"
+  },
+  "keywords": [
+    "BCF",
+    "API"
+  ],
+  "author": "The Reconstruct Inc. Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reconstruct/BCF-API/issues"
+  },
+  "homepage": "https://github.com/reconstruct/BCF-API#readme"
+}

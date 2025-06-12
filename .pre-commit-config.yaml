@@ -1,0 +1,29 @@
+repos:
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.16.0
+    hooks:
+      - id: gitleaks-docker
+        name: gitleaks
+        stages: [commit]
+        entry: -u root:root zricethezav/gitleaks protect --verbose --redact --staged
+        args: ["-c", "./.gitleaks.toml"]
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.1.1
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: []
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: "v8.35.0"
+    hooks:
+      - id: eslint
+        name: eslint
+        stages: [push]
+        additional_dependencies:
+          - "eslint@8.57.0"
+          - "@typescript-eslint/eslint-plugin@^8.10.0"
+          - "@typescript-eslint/parser@^8.10.0"
+        files: \.[jt]sx?$ # *.js, *.jsx, *.ts and *.tsx
+        types: [file]
