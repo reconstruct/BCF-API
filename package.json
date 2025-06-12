@@ -2,9 +2,25 @@
   "name": "bcf-api",
   "version": "1.0.0",
   "description": "A compatible BCF API server from Reconstruct Inc.",
-  "main": "index.js",
+  "main": "dist/src/index.js",
+  "type": "module",
+  "files": [
+    "/dist"
+  ],
+  "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./dist/src/index.js",
+    "dev": "NODE_ENV=development tsc-watch --onSuccess \"npm run generateAndServe\" | pino-pretty",
+    "generateAndServe": "npm run generateDocs && nodemon ./dist/index.js",
+    "build": "npm run clean && node ./generateSwaggerDocs.cjs && tsc",
+    "generateDocs": "node ./generateSwaggerDocs.cjs",
+    "clean": "rm -rf ./dist",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "exports": {
+    "import": "./dist/index.js",
+    "default": "./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +35,31 @@
   "bugs": {
     "url": "https://github.com/reconstruct/BCF-API/issues"
   },
-  "homepage": "https://github.com/reconstruct/BCF-API#readme"
+  "homepage": "https://github.com/reconstruct/BCF-API#readme",
+  "dependencies": {
+    "@reconstruct/data-abstraction-layer": "^1.42.0",
+    "@reconstruct/types": "^1.30.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "neverthrow": "^8.2.0",
+    "nodemon": "^3.1.10",
+    "pino-http": "^10.5.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.23",
+    "@types/swagger-ui-express": "^4.1.8",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "eslint": "^9.28.0",
+    "pino-pretty": "^13.0.0",
+    "swagger-autogen": "^2.23.7",
+    "tsc-watch": "^7.1.1",
+    "typescript": "^5.6.3",
+    "vitest": "^3.2.3"
+  }
 }

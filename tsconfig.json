@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.test.js", "generateSwaggerDocs.cjs"]
+}
