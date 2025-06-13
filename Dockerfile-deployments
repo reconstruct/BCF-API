@@ -1,0 +1,61 @@
+# Build stage
+FROM --platform=linux/amd64 node:18.12-alpine AS build
+
+ARG GITLAB_TOKEN
+ARG SSH_PRIVATE_KEY
+WORKDIR /app
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
+
+RUN     mkdir -p /root/.ssh && \
+        chmod 0700 /root/.ssh && \
+        ssh-keyscan github.com > /root/.ssh/known_hosts
+
+RUN     echo "$SSH_PRIVATE_KEY" | base64 -d | tr -d '\r' > /root/.ssh/id_rsa && \
+        chmod 600 /root/.ssh/id_rsa
+
+COPY package*.json ./
+COPY .npmrc ./
+
+RUN echo -e "//gitlab.com/api/v4/packages/npm/:_authToken=${GITLAB_TOKEN}" >> .npmrc
+RUN npm config set unsafe-perm true
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+# Run stage
+FROM --platform=linux/amd64 node:18.12-alpine AS run
+
+ARG GITLAB_TOKEN
+ARG SSH_PRIVATE_KEY
+ENV NODE_ENV production
+WORKDIR /app
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
+
+RUN     mkdir -p /root/.ssh && \
+        chmod 0700 /root/.ssh && \
+        ssh-keyscan github.com > /root/.ssh/known_hosts
+
+RUN     echo "$SSH_PRIVATE_KEY" | base64 -d | tr -d '\r' > /root/.ssh/id_rsa && \
+        chmod 600 /root/.ssh/id_rsa
+
+COPY --from=build /app/package*.json /app/.
+COPY --from=build /app/.npmrc /app/.npmrc
+
+RUN echo -e "//gitlab.com/api/v4/packages/npm/:_authToken=${GITLAB_TOKEN}" >> .npmrc
+
+RUN npm config set unsafe-perm true
+RUN npm ci --omit=dev
+
+# prevent embedding the token to the image after building
+RUN rm .npmrc
+
+COPY --from=build /app/dist /app/dist
+
+EXPOSE 8080:8080
+CMD ["node","./dist/src/index.js"]
